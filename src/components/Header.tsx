@@ -9,7 +9,7 @@ function Header() {
   const { scrollToComponent } = useScroll();
 
   return (
-    <header className="flex bg-green items-center justify-between py-4 px-6 lg:px-14 border-b-[0.5px] border-white !border-opacity-[39%]">
+    <header className="flex bg-green items-center justify-between py-4 px-6 lg:px-14 border-b-[0.5px] border-white !border-opacity-[39%] sticky top-0 z-20">
       <div className="">
         <div className="flex items-center gap-x-7">
           <div>
