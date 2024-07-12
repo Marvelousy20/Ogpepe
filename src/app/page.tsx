@@ -12,6 +12,10 @@ import { useScroll } from "@/context/useScroll";
 
 export default function Home() {
   const { refs } = useScroll();
+
+  console.log(refs.roadmap);
+  console.log(refs.introduction);
+
   return (
     <main className="">
       <Hero />

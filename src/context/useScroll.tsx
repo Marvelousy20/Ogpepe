@@ -1,13 +1,15 @@
 "use client";
 
 // src/contexts/ScrollContext.tsx
-import React, { createContext, useContext, useRef } from "react";
+import React, { createContext, useContext, useRef, RefObject } from "react";
+
+type SectionKey = "introduction" | "roadmap" | "howToBuy" | "tokenomics"; // Add other keys as needed
 
 interface ScrollContextType {
   refs: {
-    [key: string]: React.RefObject<HTMLDivElement>;
+    [key in SectionKey]: RefObject<HTMLDivElement>;
   };
-  scrollToComponent: (key: string) => void;
+  scrollToComponent: (key: SectionKey) => void;
 }
 
 const ScrollContext = createContext<ScrollContextType | undefined>(undefined);
@@ -23,7 +25,7 @@ export const ScrollProvider: React.FC<{ children: React.ReactNode }> = ({
     // Add more refs as needed
   };
 
-  const scrollToComponent = (key: string) => {
+  const scrollToComponent = (key: SectionKey) => {
     const ref = refs[key];
     if (ref && ref.current) {
       window.scrollTo({
