@@ -4,8 +4,8 @@ import Image from "next/image";
 const Introduction = () => {
   return (
     <div className="bg-green text-white relative pt-[4.43rem]">
-      <div className="grid grid-cols-2 items-start px-[6rem]">
-        <div className="relative">
+      <div className="grid grid-cols-1 lg:grid-cols-2 items-start lg:px-[6rem] px-8 gap-y-12">
+        <div className="relative hidden lg:block">
           <Image
             src="/emojitwo_container.svg"
             alt="container"
@@ -22,10 +22,29 @@ const Introduction = () => {
           />
         </div>
 
-        <div className="">
-          <h1 className="font-mochiy text-[4.375rem]">Introduction</h1>
+        <div className="relative lg:hidden flex justify-center">
+          <Image
+            src="/emojitwo_container.svg"
+            alt="container"
+            width={301}
+            height={301}
+            className="relative"
+          />
+          <Image
+            src="/emoji_two.svg"
+            alt="emoji_two"
+            width={267}
+            height={267}
+            className="absolute top-6 left-16"
+          />
+        </div>
 
-          <p className="font-monda text-[1.75rem]">
+        <div className="">
+          <h1 className="font-mochiy text-[2.81rem] lg:text-[4.375rem]">
+            Introduction
+          </h1>
+
+          <p className="font-monda lg:text-[1.75rem] mt-6 lg:mt-8">
             Welcome to OG Pepe, the home of the oldest and rarest Pepe tokens.
             With a circulating supply of just 37,321 tokens and a commitment to
             0/0 tax, no team wallets, or any sketchy shenanigans, OG Pepe stands
@@ -37,7 +56,7 @@ const Introduction = () => {
         </div>
       </div>
 
-      <div className="mt-[4.43rem]">
+      <div className="mt-12 lg:mt-[4.43rem]">
         <Image src="/intro.png" alt="intro" width={1472} height={286} />
       </div>
     </div>
